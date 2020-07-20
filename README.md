@@ -88,6 +88,73 @@ API to use
 
 
 ## Application Store structure
+```JSON
+{
+  "user": {
+    "id": 1,
+    "username": "amigo",
+    "password": "delta",
+    "fullName": "Mr. Amigo"
+  },
+  "products_searchable_criteria":{
+    "brand":{
+      "gowell":["SHOERHTCZRH8YGMW"]
+    },
+    "color":{
+      "#FFD700":["SHOERHTCZRH8YGMW"]
+    }
+  },
+  "filterable_products": {
+    "SHOERHTCZRH8YGMW": {
+      "id": "SHOERHTCZRH8YGMW",
+      "colour": {
+        "color": "#FFD700",
+        "title": "Gold"
+      },
+      "brand": "gowell",
+      "discount": 50,
+      "rating": 4,
+      "image": "https://rukminim1.flixcart.com/image/312/312/shoe/2/p/r/ar4697-414-8-lotto-414-original-imaes9ebjqy4g8cn.jpeg?q=70",
+      "price": {
+        "mrp": 2299,
+        "final_price": 1149
+      },
+      "title": "Lotto Running Shoes For Men"
+    }
+  },
+  "cart":["SHOERHTCZRH8YGMW"],
+  "products_listing":["SHOERHTCZRH8YGMW"],
+  "filter":[
+    {
+      "type": "BRAND",
+      "values": [
+        {
+          "title": "1 Can",
+          "value": "1 can"
+        }
+      ]
+    }
+    {
+      "type": "PRICE",
+      "values": [
+        {
+          "displayValue": "Min",
+          "key": "Min"
+        }
+      ]
+    },
+    {
+      "type": "COLOUR",
+      "values": [
+        {
+          "color": "#F5F5DC",
+          "title": "Beige"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ## Routes
 
