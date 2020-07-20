@@ -3,7 +3,7 @@
 ## Requirement
 
 ### Login screen 
-User should be able to login using the [API’s](https://xebiascart.herokuapp.com/users?username=amigo ) <br/>
+User should be able to login using the [API](https://xebiascart.herokuapp.com/users?username=amigo ) <br/>
 Username: amigo <br/>
 Password: delta 
 
@@ -123,8 +123,13 @@ API to use
     }
   },
   "cart":["SHOERHTCZRH8YGMW"],
-  "products_listing":["SHOERHTCZRH8YGMW"],
-  "filter":[
+  "products_list":["SHOERHTCZRH8YGMW"],
+  "applied_filters":{
+    "brand":[], 
+    "color":[], 
+    "price":[1000, 3000]
+  },
+  "filter_list":[
     {
       "type": "BRAND",
       "values": [
