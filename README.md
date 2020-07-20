@@ -2,6 +2,22 @@
 
 ## Requirement
 
+### Login screen 
+User should be able to login using the [API’s](https://xebiascart.herokuapp.com/users?username=amigo ) <br/>
+Username: amigo <br/>
+Password: delta 
+
+### Product listing page
+* User should be able to search the product 
+* User should be able to filter the products based on color, brand , price, discount 
+* User should be able to see the product list as tiles with it’s details as ProductA, BrandA, discount, colour, price 
+* User can see his name once he logs in
+
+### Error messages 
+* API can fail so should be handled 
+* Login error message for username and password 
+
+
 ## How to Run
 ### Pre-requisites
 1) Node 12+
@@ -60,6 +76,16 @@ $ npm run flow
 * **Use Long Name for Long Scopes**  
 
 ## Server API
+
+API to use 
+1. GET Product Listing: https://xebiascart.herokuapp.com/products 
+
+2. Product Search by name: https://xebiascart.herokuapp.com/products?title=provogue 
+
+3. GET Product Filters: https://xebiascart.herokuapp.com/filters 
+
+4. User Login: https://xebiascart.herokuapp.com/users?username=amigo 
+
 
 ## Application Store structure
 
