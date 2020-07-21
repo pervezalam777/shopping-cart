@@ -88,6 +88,7 @@ API to use
 
 
 ## Application Store structure
+TODO: following structure require upgrade
 ```JSON
 {
   "user": {
@@ -138,7 +139,7 @@ API to use
           "value": "1 can"
         }
       ]
-    }
+    },
     {
       "type": "PRICE",
       "values": [

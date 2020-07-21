@@ -6,7 +6,9 @@ import {
   PRODUCT_LIST_FETCHING,
   PRODUCT_LIST_RECEIVED,
   PRODUCT_LIST_FETCH_ERROR,
-  loadProducts 
+  loadProducts, 
+  getProductListToDisplay,
+  FILTER_PRODUCT_LIST
 } from '../productActions';
 
 jest.mock('../../services/productService');
@@ -46,6 +48,24 @@ describe('Product action', () => {
     const expectedActions = [
       {type:PRODUCT_LIST_FETCHING},
       {type:PRODUCT_LIST_FETCH_ERROR, payload:{error:''}}
+    ]
+    const storeActions = store.getActions();
+    expect(storeActions).toEqual(expectedActions);
+  })
+
+  it('should dispatch action for filtering product list to display', () => {
+    const storeState = {
+      filter:{ applied_filters:[] },
+      filterable_product_list: {}
+    }
+    const store = mockStore(storeState);
+    store.dispatch(getProductListToDisplay())
+
+    const expectedActions = [
+      {type:FILTER_PRODUCT_LIST, payload: {
+        applied_filters: [],
+        filterable_product_list: {}
+      }}
     ]
     const storeActions = store.getActions();
     expect(storeActions).toEqual(expectedActions);

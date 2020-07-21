@@ -24,18 +24,26 @@ const serverResponse = [
         'title': 'Blue'
     },
     'brand': 'raymond'
+  },
+  {
+    'id': 'product_3',
+    'colour': {
+        'color': '#33A1DE',
+        'title': 'Blue'
+    },
+    'brand': 'peter england'
   }
 ];
 
 const storeBasedOnServerResponse = {
   'products_searchable_criteria':{
     'brand':{
-      'peter england':['product_1'],
+      'peter england':['product_1', 'product_3'],
       'raymond':['product_2']
     },
     'color':{
       '#00AF33':['product_1'],
-      '#33A1DE':['product_2']
+      '#33A1DE':['product_2', 'product_3']
     }
   },
   'filterable_products': {
@@ -54,7 +62,15 @@ const storeBasedOnServerResponse = {
           'title': 'Blue'
       },
       'brand': 'raymond'
-    }
+    },
+    'product_3':{
+    'id': 'product_3',
+    'colour': {
+        'color': '#33A1DE',
+        'title': 'Blue'
+    },
+    'brand': 'peter england'
+  }
   }
 }
 
