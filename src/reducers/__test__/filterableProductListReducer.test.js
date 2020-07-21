@@ -64,13 +64,13 @@ const storeBasedOnServerResponse = {
       'brand': 'raymond'
     },
     'product_3':{
-    'id': 'product_3',
-    'colour': {
-        'color': '#33A1DE',
-        'title': 'Blue'
-    },
-    'brand': 'peter england'
-  }
+      'id': 'product_3',
+      'colour': {
+          'color': '#33A1DE',
+          'title': 'Blue'
+      },
+      'brand': 'peter england'
+    }
   }
 }
 

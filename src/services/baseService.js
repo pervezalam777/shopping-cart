@@ -18,7 +18,7 @@ export const processRequest = async (endPoint, options) => {
     }
 
     response = await response.json();
-    return Promise.reject({error:response})
+    return Promise.reject({errorMessage:response.error})
 
   } catch (error) {
     return Promise.reject({errorMessage:error.message})
