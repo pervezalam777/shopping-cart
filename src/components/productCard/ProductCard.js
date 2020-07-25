@@ -1,16 +1,16 @@
 import React from 'react';
-import style from './ProductCard.module.css'
+import styles from './ProductCard.module.css'
 import ColorComponent from '../colorCard/ColorComponent';
 
 function ProductCard(props) {
   return (
-    <div className={style.card}>
-      <div className={style['card-image']}>
+    <div className={styles.card}>
+      <div className={styles['card-image']}>
         <img src={props.image} />
       </div>
-      <div className={style['product-info']}>
+      <div className={styles['product-info']}>
         <h3>{props.title}</h3>
-        <div className={style.details}>
+        <div className={styles.details}>
           <div style={{alignSelf: 'flex-start'}}>
             <p>{props.brand}</p>
             <p>{props.colour.title}</p>
@@ -18,7 +18,7 @@ function ProductCard(props) {
           </div>
           <div style={{display:'flex',flexDirection:'column'}}>
             <ColorComponent {...props.colour} noEvent />
-            <button style={{alignSelf: 'flex-start'}}>add</button>
+            <button className={`${styles['add-button']}`}>add</button>
           </div>
         </div>
       </div>

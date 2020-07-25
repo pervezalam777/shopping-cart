@@ -6,7 +6,7 @@ import InfiniteLoading from 'react-simple-infinite-loading'
 function rowContainer(items, handleChange, selectedBrands){
   let mapArray = []
   let len = items.length;
-  for(let i = 0; i < len; i += 2){
+  for(let i = 0; i + 1 < len; i += 2){
     let first = items[i];
     let second = items[i+1];
     mapArray.push(
@@ -19,6 +19,18 @@ function rowContainer(items, handleChange, selectedBrands){
         <BrandComponent 
               {...second}
               selected={selectedBrands.includes(second.value)}
+              handleChange={handleChange}
+            />
+      </div>
+    )
+  }
+  if(len % 2 === 1){
+    let last = items[len -1];
+    mapArray.push(
+      <div key={`${last.value}`}>
+        <BrandComponent 
+              {...last}
+              selected={selectedBrands.includes(last.value)}
               handleChange={handleChange}
             />
       </div>
@@ -37,14 +49,6 @@ function BrandCard(props) {
       >
         { 
           rowContainer(props.values, props.handleChange, props.selectedBrands)
-          // props.values.map(item => (
-          //   <BrandComponent 
-          //     key={item.value} 
-          //     {...item}
-          //     selected={props.selectedBrands.includes(item.value)}
-          //     handleChange={props.handleChange}
-          //   />
-          // ))
         }
       </InfiniteLoading>
       </div>
