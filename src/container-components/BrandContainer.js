@@ -5,8 +5,6 @@ import { filterProductList } from '../actions/productActions';
 import { addBrandToFilter, removeBrandFromFilter } from '../actions/filterActions';
 
 function BrandContainer(props){
-  console.log('selecteBrands ', props.selectedBrands)
-
   const handleChange = (event) => {
     console.log(event.target.id, event.target.checked);
     if(event.target.checked){

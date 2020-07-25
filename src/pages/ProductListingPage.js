@@ -8,12 +8,10 @@ import {
 
 function ProductListingPage() {
   return (
-    <div>
+    <div className='container'>
       <HeaderContainer /> 
-      <main>
-        <FiltersListing />
-        <ProductListing />
-      </main>
+      <FiltersListing />
+      <ProductListing />
     </div>
   )
 }

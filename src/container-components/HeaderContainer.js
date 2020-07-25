@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 function HeaderContainer(props) {
   return (
-    <header>Logo</header>
+    <header className='main-head'>Logo</header>
   )
 }
 

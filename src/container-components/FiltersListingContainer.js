@@ -6,6 +6,8 @@ import PriceContainer from './PriceContainer';
 import { resetAppliedFilter } from '../actions/filterActions';
 import { filterProductList } from '../actions/productActions';
 
+import styles from './FiltersListingContainer.module.css'
+
 const mapComponent = {
   'BRAND':BrandContainer,
   'COLOUR':ColorContainer,
@@ -19,9 +21,12 @@ function FiltersListing(props){
   }
 
   return (
-    <section>
-      <header>Filters <button onClick={handleReset}>reset</button></header>
-      <div>
+    <section className='side'>
+      <header className={`${styles.header} ${styles.gap}`}>
+        <h3>Filters</h3>
+        <button className={styles.button} onClick={handleReset}>reset</button>
+      </header>
+      <div className={`${styles.gap}`}>
         {
           props.filters &&
           props.filters.map((item) => {

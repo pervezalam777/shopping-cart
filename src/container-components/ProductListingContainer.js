@@ -3,17 +3,15 @@ import { connect } from 'react-redux';
 import {ProductCard} from '../components'
 
 function ProductListing({dispatch, productListIds, productList, appliedFiler}) {
-  console.log("ids.......", productListIds);
-  console.log('ProductList', productList);
   return (
-    <section>
+    <main className='content'>
       {
         productListIds && productListIds.length > 0 &&
         productListIds.map(productId => (
           <ProductCard key={productId} {...productList.filterable_products[productId]} />
         ))
       }
-    </section>
+    </main>
   )
 }
 

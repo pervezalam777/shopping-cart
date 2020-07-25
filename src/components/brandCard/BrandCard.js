@@ -31,7 +31,7 @@ function BrandCard(props) {
   return (
     <div>
       <h3>Brand</h3>
-      <div style={{ width: '350px', height: '300px' }}>
+      <div style={{ width: '100%', height: '10rem' }}>
       <InfiniteLoading
         itemHeight={40}
       >

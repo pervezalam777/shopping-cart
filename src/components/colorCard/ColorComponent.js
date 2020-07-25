@@ -13,6 +13,9 @@ const classToApplied = (selected) => {
 function ColorComponent(props) {
 
   const handleClick = (e) => {
+    if(props.noEvent){
+      return;
+    }
     if(props.selected){
       props.handleRemoveColor(props.color);
     } else {
