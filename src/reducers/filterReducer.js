@@ -7,7 +7,8 @@ import {
   ADD_MIN_PRICE_TO_FILTER,
   REMOVE_MIN_PRICE_FROM_FILTER,
   ADD_MAX_PRICE_TO_FILTER,
-  REMOVE_MAX_PRICE_FROM_FILTER
+  REMOVE_MAX_PRICE_FROM_FILTER,
+  RESET_APPLIED_FILTER
 } from "../actions/filterActions";
 
 export 
@@ -17,7 +18,7 @@ const initialState = {
 }
 
 function addToFilter(filters, key, value){
-  if(filters == null){
+  if(filters === {}){
     return {[key]:[value]};
   }
   return {
@@ -74,7 +75,7 @@ function addRangeToFilter({filters, key, value, position}) {
   let arr = [];
   arr[position] = value;
 
-  if(filters == null){
+  if(filters === {}){
     return {[key]:arr};
   }
   if(filters[key]){
@@ -92,7 +93,7 @@ function addRangeToFilter({filters, key, value, position}) {
 function removeRangeToFilter({filters, key, position}) {
   let arr = [...filters[key]]
   if((arr.length === 1 && position === 0) 
-    || (arr.length === 2 && (!arr[0] || arr[0] === -1) && position == 1)
+    || (arr.length === 2 && (!arr[0] || arr[0] === -1) && position === 1)
   ){
     let cloneFilter = {...filters};
     delete cloneFilter[key];
@@ -168,6 +169,11 @@ const filterReducer = (state = initialState, {type, payload}) => {
         key:'price',
         position:1
       })
+    case RESET_APPLIED_FILTER:
+      return {
+        ...state,
+        applied_filters:{}
+      }
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import {
   PRODUCT_LIST_RECEIVED,
   PRODUCT_LIST_FETCH_ERROR,
   loadProducts, 
-  getProductListToDisplay,
+  filterProductList,
   FILTER_PRODUCT_LIST
 } from '../productActions';
 
@@ -23,14 +23,18 @@ describe('Product action', () => {
     const spy = fetchProductListFromServer.mockReturnValue(Promise.resolve([]));
     spy.mockClear();
 
-    const store = mockStore({});
+    const store = mockStore({
+      filter: {applied_filters: {}},
+      filterable_product_list:{}
+    });
 
     await store.dispatch(loadProducts());
     expect(spy).toHaveBeenCalled();
 
     const expectedActions = [
       {type:PRODUCT_LIST_FETCHING},
-      {type:PRODUCT_LIST_RECEIVED, payload:[]}
+      {type:PRODUCT_LIST_RECEIVED, payload:[]},
+      {type:FILTER_PRODUCT_LIST, payload:{applied_filters:{}, filterable_product_list:{}}}
     ]
     const storeActions = store.getActions();
     expect(storeActions).toEqual(expectedActions);
@@ -59,7 +63,7 @@ describe('Product action', () => {
       filterable_product_list: {}
     }
     const store = mockStore(storeState);
-    store.dispatch(getProductListToDisplay())
+    store.dispatch(filterProductList())
 
     const expectedActions = [
       {type:FILTER_PRODUCT_LIST, payload: {

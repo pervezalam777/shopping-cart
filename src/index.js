@@ -7,6 +7,11 @@ import store from './store/configureStore';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
+import { loadProducts } from './actions/productActions';
+import { loadFilters } from './actions/filterActions';
+
+store.dispatch(loadProducts());
+store.dispatch(loadFilters());
 
 ReactDOM.render(
   <React.StrictMode>

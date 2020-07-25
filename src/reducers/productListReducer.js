@@ -22,7 +22,7 @@ function unique(firstArray, secondArray) {
 
 function getProductIdsUniqueList(criteriaListObject, keysList) {
   return keysList.reduce((concatList, nextKey) => {
-    return unique(criteriaListObject[nextKey], concatList);
+    return unique(criteriaListObject[nextKey] || [], concatList);
   }, [])
 }
 
@@ -55,14 +55,15 @@ function getProductFilter(type, criteria, list){
   }
 }
 
-function filterProductList({
-  filterable_product_list:{
-    products_searchable_criteria, 
-    filterable_products,
-  },
-  filter:{applied_filters}
-}) {
-  if(applied_filters === null || applied_filters === {}){
+function filterProductList(options) {
+  const {
+    filterable_product_list:{
+      products_searchable_criteria, 
+      filterable_products,
+    },
+    applied_filters
+  } = options;
+  if(applied_filters === null || Object.keys(applied_filters).length === 0){
     return Object.keys(filterable_products);
   }
   return Object

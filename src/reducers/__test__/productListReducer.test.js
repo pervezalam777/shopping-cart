@@ -116,49 +116,49 @@ describe('Product list reducer', () => {
     expect(newState).toEqual(initialState);
   });
   it('should return all the products if no filter is applied', () => {
-    const payload  = {...storeStateWithoutFilter, filter: {applied_filters:null}}
+    const payload  = {...storeStateWithoutFilter, applied_filters:null}
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(allProductIdsIfNoFilterApplied);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if only color filter applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...onlyColorFilter} }
+    const payload = {...storeStateWithoutFilter, ...onlyColorFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(onlyColorFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if only brand filter applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...onlyBrandFilter} }
+    const payload = {...storeStateWithoutFilter, ...onlyBrandFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(onlyBrandFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if brand and color filter applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...brandAndColorFilter} }
+    const payload = {...storeStateWithoutFilter, ...brandAndColorFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(brandAndColorFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if only price filter with minimum and maximum applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...onlyPriceWithMinMaxFilter} }
+    const payload = {...storeStateWithoutFilter, ...onlyPriceWithMinMaxFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(onlyPriceWithMinMaxFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if only price filter with only minimum applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...onlyPriceWithMinFilter} }
+    const payload = {...storeStateWithoutFilter, ...onlyPriceWithMinFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(onlyPriceWithMinFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if only price filter with only maximum applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...onlyPriceWithMaxFilter} }
+    const payload = {...storeStateWithoutFilter, ...onlyPriceWithMaxFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(onlyPriceWithMaxFilterOutput);
     expect(newState).not.toEqual(initialState);
   });
   it('should return filtered product list to display if all three brand, color, and price filter applied', () => {
-    const payload = {...storeStateWithoutFilter, filter: {...brandAndColorAndPriceFilter} }
+    const payload = {...storeStateWithoutFilter, ...brandAndColorAndPriceFilter }
     const newState = productListReducer(initialState, {type:FILTER_PRODUCT_LIST, payload});
     expect(newState).toEqual(brandAndColorAndPriceFilterOutput);
     expect(newState).not.toEqual(initialState);
