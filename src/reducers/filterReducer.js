@@ -11,6 +11,12 @@ import {
   RESET_APPLIED_FILTER
 } from "../actions/filterActions";
 
+import {
+  COLOR,
+  BRAND,
+  PRICE
+} from '../constants/appConst'
+
 export 
 const initialState = {
   filter_list:null,
@@ -136,37 +142,37 @@ const filterReducer = (state = initialState, {type, payload}) => {
         filter_list:payload
       }
     case ADD_COLOR_TO_FILTER:
-      return addFilterOrReturnSameState(state, 'color', payload);
+      return addFilterOrReturnSameState(state, COLOR, payload);
     case REMOVE_COLOR_FROM_FILTER:
-      return removeFilterOrReturnSameState(state, 'color', payload);
+      return removeFilterOrReturnSameState(state, COLOR, payload);
     case ADD_BRAND_TO_FILTER:
-      return addFilterOrReturnSameState(state, 'brand', payload);
+      return addFilterOrReturnSameState(state, BRAND, payload);
     case REMOVE_BRAND_FROM_FILTER:
-      return removeFilterOrReturnSameState(state, 'brand', payload);
+      return removeFilterOrReturnSameState(state, BRAND, payload);
     case ADD_MIN_PRICE_TO_FILTER:
       return addPriceFilterOrReturnSameState({
         state, 
-        key:'price', 
+        key:PRICE, 
         value:payload,
         position:0
       });
     case REMOVE_MIN_PRICE_FROM_FILTER:
       return removePriceFilterOrReturnSameState({
         state,
-        key:'price',
+        key:PRICE,
         position:0
       })
     case ADD_MAX_PRICE_TO_FILTER:
       return addPriceFilterOrReturnSameState({
         state,
-        key:'price',
+        key:PRICE,
         value:payload,
         position: 1
       })
     case REMOVE_MAX_PRICE_FROM_FILTER:
       return removePriceFilterOrReturnSameState({
         state,
-        key:'price',
+        key:PRICE,
         position:1
       })
     case RESET_APPLIED_FILTER:

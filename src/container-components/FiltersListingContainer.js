@@ -5,13 +5,14 @@ import BrandContainer from './BrandContainer';
 import PriceContainer from './PriceContainer';
 import { resetAppliedFilter } from '../actions/filterActions';
 import { filterProductList } from '../actions/productActions';
+import {BRAND, COLOUR, PRICE} from '../constants/appConst'
 
 import styles from './FiltersListingContainer.module.css'
 
 const mapComponent = {
-  'BRAND':BrandContainer,
-  'COLOUR':ColorContainer,
-  'PRICE':PriceContainer
+  [BRAND.toUpperCase()]:BrandContainer,
+  [COLOUR.toUpperCase()]:ColorContainer,
+  [PRICE.toUpperCase()]:PriceContainer
 }
 
 function FiltersListing(props){

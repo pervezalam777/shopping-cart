@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { BrandCard } from '../components'
 import { filterProductList } from '../actions/productActions';
 import { addBrandToFilter, removeBrandFromFilter } from '../actions/filterActions';
+import {BRAND} from '../constants/appConst';
 
 function BrandContainer(props){
   const handleChange = (event) => {
@@ -25,7 +26,7 @@ function BrandContainer(props){
 
 const mapStateToProps = (state) => {
   return {
-    selectedBrands: state.filter.applied_filters['brand'] || []
+    selectedBrands: state.filter.applied_filters[BRAND] || []
   }
 }
 

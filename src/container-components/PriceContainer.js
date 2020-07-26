@@ -9,6 +9,7 @@ import {
 } from '../actions/filterActions';
 
 import {filterProductList} from '../actions/productActions';
+import {PRICE} from '../constants/appConst'
 
 // TODO: show some message where max should always be more than min value.
 
@@ -45,7 +46,7 @@ function PriceContainer(props){
 
 const mapStateToProps = (state) => {
   return {
-    selectedMinMax: state.filter.applied_filters['price'] || []
+    selectedMinMax: state.filter.applied_filters[PRICE] || []
   }
 }
 

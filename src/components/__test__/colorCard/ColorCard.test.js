@@ -24,7 +24,6 @@ describe('Brand card', () => {
     const wrapper = shallow(<ColorCard {...props} />)
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find('h3').contains('Color')).toBe(true);
-    console.log(wrapper.find('Color'))
     
     expect(wrapper.find('ColorComponent').length).toBe(5);
 

@@ -1,4 +1,5 @@
 import { FILTER_PRODUCT_LIST } from "../actions/productActions";
+import {PRICE} from '../constants/appConst'
 
 const initialState = null;
 
@@ -48,7 +49,7 @@ function getPriceFilter([minimum, maximum], list) {
 
 function getProductFilter(type, criteria, list){
   switch(type){
-    case 'price':
+    case PRICE:
       return getPriceFilter(criteria, list)
     default:
       return Object.keys(list);

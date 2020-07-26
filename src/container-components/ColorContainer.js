@@ -7,6 +7,7 @@ import {
 } from '../actions/filterActions';
 
 import {filterProductList} from '../actions/productActions';
+import {COLOR} from '../constants/appConst'
 
 function ColorContainer(props){
   
@@ -32,7 +33,7 @@ function ColorContainer(props){
 
 const mapStateToProps = (state) => {
   return {
-    selectedColors: state.filter.applied_filters['color'] || []
+    selectedColors: state.filter.applied_filters[COLOR] || []
   }
 }
 
