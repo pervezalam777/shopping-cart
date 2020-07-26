@@ -12,7 +12,7 @@ const classToApplied = (selected) => {
 
 function ColorComponent(props) {
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     if(props.noEvent){
       return;
     }
@@ -26,7 +26,6 @@ function ColorComponent(props) {
   return (
     <button
       onClick={handleClick}
-      //className={`${styles.color} ${styles.mark}`}
       className={classToApplied(props.selected)}
       style={{backgroundColor:props.color}}
     >

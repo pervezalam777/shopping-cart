@@ -8,9 +8,9 @@ import BrandComponent from '../../brandCard/BrandComponent';
 
 const props = {
   handleChange: jest.fn(),
-  value:'#00ff00',
+  value:'1 Can',
   selected: false,
-  title:'green'
+  title:'1 Can'
 }
 
 describe('Brand Component', () => {

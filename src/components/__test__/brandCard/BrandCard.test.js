@@ -6,16 +6,18 @@ Enzyme.configure({adapter: new Adapter()});
 
 import BrandCard from '../../brandCard/BrandCard';
 
+
+
 const props = {
   values:[
-    {value:'#00ff00', title:'color1'},
-    {value:'#00ffff', title:'color2'},
-    {value:'#ffff00', title:'color3'},
-    {value:'#ffffff', title:'color4'},
-    {value:'#ff0000', title:'color5'}
+    {title: "GKM Trend", value: "gkm trend"},
+    {title: "Glamour", value: "glamour"},
+    {title: "GLISTEN", value: "glisten"},
+    {title: "Glow", value: "glow"},
+    {title: "GO", value: "go"}
   ],
   handleChange: jest.fn(),
-  selectedBrands:['#00ffff']
+  selectedBrands:['glamour']
 }
 
 describe('Brand card', () => { 
