@@ -8,7 +8,7 @@ import * as ProductActions from '../../actions/productActions'
 jest.mock('../../actions/filterActions');
 jest.mock('../../actions/productActions');
 
-import Enzyme, {mount} from 'enzyme';
+import Enzyme, {mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ColorContainer from '../ColorContainer';
@@ -70,5 +70,18 @@ describe('Color container', () => {
     expect(FilterActions.removeColorFromFilter).toHaveBeenCalled();
     expect(FilterActions.removeColorFromFilter).toHaveBeenCalledWith(color);
     expect(ProductActions.filterProductList).toHaveBeenCalled();
+  })
+
+  it('should render without color filter applied', () => {
+    const storeWithoutFilters = {
+      filter:{
+        applied_filters: {}
+      }
+    }
+    store = mockStore(storeWithoutFilters);
+    const component = shallow(<Provider store={store}>
+      <ColorContainer {...props} />
+    </Provider>)
+    expect(component.exists()).toBe(true);
   })
 })

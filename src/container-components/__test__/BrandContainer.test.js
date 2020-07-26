@@ -8,7 +8,7 @@ import * as ProductActions from '../../actions/productActions'
 jest.mock('../../actions/filterActions');
 jest.mock('../../actions/productActions');
 
-import Enzyme, {mount} from 'enzyme';
+import Enzyme, {mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import BrandContainer from '../BrandContainer';
@@ -37,6 +37,7 @@ const props = {
 
 describe('Brand container', () => {
   let store, wrapper, brandCard, handleChange;
+
   beforeEach(() =>{
     store = mockStore(storeState);
     store.dispatch = jest.fn();
@@ -47,6 +48,7 @@ describe('Brand container', () => {
     brandCard = wrapper.find('BrandCard');
     handleChange = brandCard.props().handleChange;
   })
+
   it('should render with props', () => {
     expect(wrapper.exists()).toBe(true);
   })
@@ -67,5 +69,18 @@ describe('Brand container', () => {
     expect(FilterActions.removeBrandFromFilter).toHaveBeenCalled();
     expect(FilterActions.removeBrandFromFilter).toHaveBeenCalledWith('go');
     expect(ProductActions.filterProductList).toHaveBeenCalled();
+  })
+
+  it('should render without brand filter applied', () => {
+    const storeWithoutFilters = {
+      filter:{
+        applied_filters: {}
+      }
+    }
+    store = mockStore(storeWithoutFilters);
+    const component = shallow(<Provider store={store}>
+      <BrandContainer {...props} />
+    </Provider>)
+    expect(component.exists()).toBe(true);
   })
 })
