@@ -77,7 +77,11 @@ function filterProductList(options) {
       } else {
         uniqueList = getProductFilter(nextKey, applied_filters[nextKey], filterable_products)
       }
-      return filterList.length > 0 ? intersect(uniqueList, filterList) : uniqueList;
+      filterList.push(uniqueList)
+      return filterList; 
+    }, [])
+    .reduce((finalList, uniqueList, index) => {
+      return index === 0 ? uniqueList : intersect(uniqueList, finalList) 
     }, [])
 }
 
