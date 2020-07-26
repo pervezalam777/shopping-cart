@@ -8,7 +8,11 @@ function ProductListing({dispatch, productListIds, productList, appliedFiler}) {
       {
         productListIds && productListIds.length > 0 &&
         productListIds.map(productId => (
-          <ProductCard key={productId} {...productList.filterable_products[productId]} />
+          <ProductCard 
+            key={productId}
+            dispatch={dispatch} 
+            {...productList.filterable_products[productId]} 
+          />
         ))
       }
     </main>
