@@ -6,7 +6,6 @@ import { addBrandToFilter, removeBrandFromFilter } from '../actions/filterAction
 
 function BrandContainer(props){
   const handleChange = (event) => {
-    console.log(event.target.id, event.target.checked);
     if(event.target.checked){
       props.dispatch(addBrandToFilter(event.target.id))
     } else {

@@ -21,7 +21,7 @@ const props = {
 }
 
 
-describe('Price Component', () => {
+describe('Product Component', () => {
   it('should render as per provided props', () => {
     const wrapper = shallow(<ProductCard {...props} />);
     expect(wrapper.exists()).toBe(true);
