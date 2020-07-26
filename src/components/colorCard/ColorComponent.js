@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ColorComponent.module.css'
-import ColorCard from './ColorCard';
 
 const classToApplied = (selected) => {
   let classes = `${styles.color}`

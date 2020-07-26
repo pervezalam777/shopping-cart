@@ -6,8 +6,6 @@ import PriceContainer from './PriceContainer';
 import { resetAppliedFilter } from '../actions/filterActions';
 import { filterProductList } from '../actions/productActions';
 
-import reset from '../assets/reset.svg';
-
 import styles from './FiltersListingContainer.module.css'
 
 const mapComponent = {
