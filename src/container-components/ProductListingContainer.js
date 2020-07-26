@@ -17,7 +17,7 @@ function ProductListing({dispatch, productListIds, productList, appliedFiler}) {
       }
     </main>
   )
-}
+} 
 
 
 
