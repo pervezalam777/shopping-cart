@@ -1,7 +1,9 @@
 import React from 'react';
 import BrandComponent from './BrandComponent';
 
-import InfiniteLoading from 'react-simple-infinite-loading'
+import InfiniteLoading from 'react-simple-infinite-loading';
+
+import styles from './BrandCard.module.css'
 
 function rowContainer(items, handleChange, selectedBrands){
   let mapArray = []
@@ -10,7 +12,7 @@ function rowContainer(items, handleChange, selectedBrands){
     let first = items[i];
     let second = items[i+1];
     mapArray.push(
-      <div key={`${first.value}__${second.value}`}>
+      <div className={styles['brand-options']} key={`${first.value}__${second.value}`}>
         <BrandComponent 
               {...first}
               selected={selectedBrands.includes(first.value)}
@@ -41,7 +43,7 @@ function rowContainer(items, handleChange, selectedBrands){
 
 function BrandCard(props) {
   return (
-    <div>
+    <div className={styles.container}>
       <h3>Brand</h3>
       <div style={{ width: '100%', height: '10rem' }}>
       <InfiniteLoading

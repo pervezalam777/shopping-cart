@@ -162,6 +162,7 @@ TODO: following structure require upgrade
 }
 ```
 
+
 ## Routes
 
 
@@ -178,3 +179,5 @@ Read instruction for [Flow Language Support](https://github.com/flowtype/flow-fo
 3) Click on Disable or Disable (workspace)
 
 ## References
+[Shallow Rendering of hooks](https://dev.to/mikeborozdin/shallow-rendering-react-hooks-and-why-shallow-rendering-is-good-57hd)
+[icons](https://dmfrancisco.github.io/react-icons/);

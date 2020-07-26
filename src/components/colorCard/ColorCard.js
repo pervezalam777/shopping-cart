@@ -1,5 +1,6 @@
 import React from 'react';
 import Color from './ColorComponent';
+import styles from './ColorCard.module.css'
 
 function ColorCard({
   values, 
@@ -8,7 +9,7 @@ function ColorCard({
   selectedColors
 }) {
   return (
-    <div>
+    <div className={styles.container}>
       <h3>Color</h3>
         {
           values.map(colorMeta => (

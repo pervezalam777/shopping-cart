@@ -1,7 +1,9 @@
 .main-head {
   grid-area: header;
-  height: 4rem;
+  height: 4.5rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .content {
@@ -22,5 +24,4 @@
     "header header"
     "sidebar content";
   grid-template-columns: 24rem 1fr;
-  height: 100vh;
 }

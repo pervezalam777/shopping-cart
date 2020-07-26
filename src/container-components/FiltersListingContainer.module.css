@@ -2,6 +2,8 @@
 
 .button {
   margin-right: 0.5rem;
+  background: rgb(245, 64, 64);
+  cursor: pointer;
 } 
 
 .header {
@@ -9,9 +11,18 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  background-color: aquamarine;
+  background: rgb(245, 64, 64);
+  color: rgb(238, 237, 237);
+  font-size: 1.1em;
+  letter-spacing: .1em;
 }
 
 .gap {
-  padding: 0rem 1rem;
+  padding: 0.6rem 1rem;
+}
+
+.reset-svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(238, 237, 237);
 }
