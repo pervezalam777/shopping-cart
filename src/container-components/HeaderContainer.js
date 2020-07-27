@@ -22,7 +22,7 @@ function HeaderContainer(props) {
         </form>
       </div>
       <div className={styles.right}>
-        <div>Anonymous</div>
+        <div>Welcome to User</div>
         <div>cart</div>
       </div>
     </header>
