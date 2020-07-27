@@ -17,6 +17,18 @@ Password: delta
 * API can fail so should be handled 
 * Login error message for username and password 
 
+## Completed
+* Fetching Filter and Product list from the server.
+* Filter section with Brand, Color and Price filters functionality.
+* Product listing based on without filter or filter applied.
+* UI implementation
+* Unit test cases added (90% code coverage)
+
+## Pending
+* Login functionality
+* Cart functionality
+* Search functionality
+* UI (hover states), loading indications.
 
 ## How to Run
 ### Pre-requisites
@@ -62,7 +74,6 @@ $ npm run flow
 * **CSS file name** should match the component file name convention.
 
 ### Clean code guidelines
-
 * No commented code should should left in code files.
 * **Flag Argument** Avoid using boolean flag in function parameters
 * **Too Many Arguments** Function parameter should not be more than three
@@ -87,86 +98,58 @@ API to use
 4. User Login: https://xebiascart.herokuapp.com/users?username=amigo 
 
 
-## Application Store structure
-TODO: following structure require upgrade
+## Application Store structure (redux store)
 ```JSON
 {
-  "user": {
-    "id": 1,
-    "username": "amigo",
-    "password": "delta",
-    "fullName": "Mr. Amigo"
-  },
-  "products_searchable_criteria":{
-    "brand":{
-      "gowell":["SHOERHTCZRH8YGMW"]
+  "filterable_product_list": {
+    "filterable_products": {
+      "product_id": {
+        "id": "product_id",
+        "colour": {
+          "color": "#FFD700",
+          "title": "Gold"
+        },
+        "brand": "nike",
+        "discount": 50,
+        "rating": 4,
+        "image": "",
+        "price": {
+          "mrp": 2299,
+          "final_price": 1149
+        },
+        "title": ""
+      }
     },
-    "color":{
-      "#FFD700":["SHOERHTCZRH8YGMW"]
-    }
-  },
-  "filterable_products": {
-    "SHOERHTCZRH8YGMW": {
-      "id": "SHOERHTCZRH8YGMW",
-      "colour": {
-        "color": "#FFD700",
-        "title": "Gold"
+    "products_searchable_criteria":{
+      "brand":{
+        "nike":["product_id"]
       },
-      "brand": "gowell",
-      "discount": 50,
-      "rating": 4,
-      "image": "https://rukminim1.flixcart.com/image/312/312/shoe/2/p/r/ar4697-414-8-lotto-414-original-imaes9ebjqy4g8cn.jpeg?q=70",
-      "price": {
-        "mrp": 2299,
-        "final_price": 1149
+      "color":{
+        "#FFD700":["product_id"]
+      }
+    },
+  },
+  "filter": {
+    "applied_filters":{ "brand":[], "color":[], "price":[] },
+    "filter_list":[
+      {
+        "type": "BRAND",
+        "values": [ { "title": "",  "value": "" } ]
       },
-      "title": "Lotto Running Shoes For Men"
-    }
+      {
+        "type": "PRICE",
+        "values": [ { "displayValue": "Min", "key": "Min" } ]
+      },
+      {
+        "type": "COLOUR",
+        "values": [ { "color": "#F5F5DC", "title": "Beige" } ]
+      }
+    ]
   },
-  "cart":["SHOERHTCZRH8YGMW"],
-  "products_list":["SHOERHTCZRH8YGMW"],
-  "applied_filters":{
-    "brand":[], 
-    "color":[], 
-    "price":[1000, 3000]
-  },
-  "filter_list":[
-    {
-      "type": "BRAND",
-      "values": [
-        {
-          "title": "1 Can",
-          "value": "1 can"
-        }
-      ]
-    },
-    {
-      "type": "PRICE",
-      "values": [
-        {
-          "displayValue": "Min",
-          "key": "Min"
-        }
-      ]
-    },
-    {
-      "type": "COLOUR",
-      "values": [
-        {
-          "color": "#F5F5DC",
-          "title": "Beige"
-        }
-      ]
-    }
-  ]
+  "products_list":[]
 }
 ```
 
-
-## Routes
-
-
-## NOTES
 
 ## Flow Language Support for Visual Studio Code
 
