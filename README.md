@@ -23,12 +23,16 @@ Password: delta
 * Product listing based on without filter or filter applied.
 * UI implementation
 * Unit test cases added (90% code coverage)
+* Integration with travis CI
+* Infinite scroll used in brand section as brands list was too long
 
 ## Pending
 * Login functionality
 * Cart functionality
 * Search functionality
 * UI (hover states), loading indications.
+* Code review and removal of redundant component code.
+* Enabling 'flow' on individual files
 
 ## How to Run
 ### Pre-requisites
@@ -162,5 +166,5 @@ Read instruction for [Flow Language Support](https://github.com/flowtype/flow-fo
 3) Click on Disable or Disable (workspace)
 
 ## References
-[Shallow Rendering of hooks](https://dev.to/mikeborozdin/shallow-rendering-react-hooks-and-why-shallow-rendering-is-good-57hd)
-[icons](https://dmfrancisco.github.io/react-icons/);
+* [Shallow Rendering of hooks](https://dev.to/mikeborozdin/shallow-rendering-react-hooks-and-why-shallow-rendering-is-good-57hd)
+* [icons](https://dmfrancisco.github.io/react-icons/)
